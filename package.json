@@ -1,0 +1,30 @@
+{
+  "name": "pocket-wiz",
+  "version": "1.0.0",
+  "description": "Rest API for the financial application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "author": "Wilvanos Zhira",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "colors": "^1.4.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.10",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
+  }
+}
