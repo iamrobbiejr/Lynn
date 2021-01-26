@@ -25,7 +25,7 @@ exports.logIn =  (req, res, next)=>{
             let bool = bcrypt.compare(password, user[0].password)
             .then(function(){
                 console.log(user[0].password);
-                console.log(bool)
+                console.log(bool) 
                 if (bool == false){
                      res.status(400).json({
                         message: 'password incorrect',
