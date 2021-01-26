@@ -15,7 +15,7 @@ exports.logIn =  (req, res, next)=>{
 
       Auth.findOne({ Email: Email }, (err, user) => {
 
-        if (!user) {
+        if (!Auth) {
 
          return res.status(404).json({ 
              success: false, 
