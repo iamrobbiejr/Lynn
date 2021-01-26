@@ -13,44 +13,35 @@ exports.logIn =  (req, res, next)=>{
       }
 
 
-      Auth.findOne({ Email: Email }, (err, user) => {
+      Auth.find({ Email: Email }, (err, user) => {
 
-        if (!Auth) {
+        if (!user) {
 
          return res.status(404).json({ 
              success: false, 
              message: 'User email not found!'
              });
          } else {
-
-            Auth.findOne({password: password}, (err, isMatch) => {
-            console.log(isMatch);
-            //isMatch is eaither true or false
-            if (!isMatch) {
-                return res.status(400).json({ 
-                    success: false, 
-                    message: 'Wrong Password!'
-                 });
-        } else {
-
-         user.console.log((err, user) => {
-         if (!err) {
-         return res.status(400).send({ err });
-        } else {
-         
-         //saving token to cookie
-         res.status(200).json({
-         
-            success: true,
-            message: "Successfully Logged In!",
-            
-         })
-        }
-        });
-        }
-        });
+            let bool = bcrypt.compare(password, user[0].password)
+            .then(function(){
+                console.log(user[0].password);
+                console.log(bool)
+                if (bool == false){
+                     res.status(400).json({
+                        message: 'password incorrect',
+                        success: false,
+                    })
+    
+                }else{
+                    return res.status(201).json({
+                        success: true,
+                        message: 'log in successful'
+                    })
+                }
+            })
          }
-        });
+        })  
+        
         
        
         
