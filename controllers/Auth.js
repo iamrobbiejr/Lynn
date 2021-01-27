@@ -28,7 +28,7 @@ exports.logIn =  (req, res, next)=>{
                 console.log(bool) 
                 if (bool == false){
                      res.status(400).json({
-                        message: 'password incorrect',
+                        message: 'Password is incorrect!',
                         success: false,
                     })
     
