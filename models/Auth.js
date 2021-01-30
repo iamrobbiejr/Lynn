@@ -39,7 +39,7 @@ const AuthentificationScheme = new mongoose.Schema({
     tokens:[{
         token:{
             type: String,
-            required: [true, 'token not supplied']
+            required: [false, 'token not supplied']
         }
     }]
     
