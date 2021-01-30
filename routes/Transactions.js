@@ -21,11 +21,11 @@ router.post('/transctions', addTransaction);
 router.delete('/transaction/:id', deleteTransaction);
 
 //goals routes
-router.post('./goals', AddGoal);
+router.post('/goals', AddGoal);
 router.get('/goals', getGoals);
 router.get('goals/:id', checkGoal);
 router.delete('goals/:id', deleteGoal);
-
+ 
 ///////////////////////////authentification routes//////////////
 router.post('/login', forwardAuthenticated, logIn);
 router.post('/register', Register);

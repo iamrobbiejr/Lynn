@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-
+const jwt = require("jsonwebtoken");
+const validator = require('validator');
 
 const AuthentificationScheme = new mongoose.Schema({
     Email:{
@@ -28,12 +29,20 @@ const AuthentificationScheme = new mongoose.Schema({
         type: String,
         trim: true, 
         required: [true, 'please select a password to use'],
+        minlength: [7, 'your password must have at least seven characters']
     },
     password2: {
         type: String,
         trim: true, 
         required: [false, 'please verify your password'],
-    }
+    },
+    tokens:[{
+        token:{
+            type: String,
+            required: [true, 'token not supplied']
+        }
+    }]
+    
     
 })
 

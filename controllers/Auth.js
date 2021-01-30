@@ -2,6 +2,7 @@
 const Auth = require('../models/Auth')
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const jwt = require('jsonwebtoken');
 
 
 exports.logIn =  (req, res, next)=>{
@@ -33,6 +34,7 @@ exports.logIn =  (req, res, next)=>{
                     })
     
                 }else{
+                  
                     return res.status(201).json({
                         success: true,
                         message: 'log in successful'
@@ -47,6 +49,8 @@ exports.logIn =  (req, res, next)=>{
         
 
 }
+
+
 
 exports.Register = async (req, res, next)=>{ 
     try{
