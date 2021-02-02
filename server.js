@@ -3,7 +3,8 @@ const dotenv = require('dotenv');
 const colors = require('colors');
 const morgan = require( 'morgan');
 const passport = require('passport');
-const connectDB = require('./config/db')
+const connectDB = require('./config/db');
+var cors = require('cors');
 
 dotenv.config({path: './config/config.env'});
 
@@ -18,6 +19,7 @@ require('./config/passport')(passport);
 
 // Passport middleware
 app.use(passport.initialize());
+app.use(cors());
 app.use(passport.session());
 app.use(express.json());
 
