@@ -9,21 +9,21 @@ const { forwardAuthenticated } = require('../config/auth');
 
 ////////////////////accounts routes/////////////////
 router.post('/accounts', addAccount);
-router.get('/accounts/:id', checkAccount);
+router.get('/account/:id', checkAccount);
 router.post('/upadateaccount/:id', updateAccount);
 router.delete('/accounts/:id', deleteAccount);
-router.get('/accounts', getAccounts);
+router.get('/accounts/:id', getAccounts);
 
 //transactions routes
 
-router.get('/transactions', getTransactions);
+router.get('/transactions/:id', getTransactions);
 router.post('/transctions', addTransaction);
 router.delete('/transaction/:id', deleteTransaction);
 
 //goals routes
 router.post('/goals', AddGoal);
-router.get('/goals', getGoals);
-router.get('goals/:id', checkGoal);
+router.get('/goals/:id', getGoals);
+router.get('goal/:id', checkGoal);
 router.delete('goals/:id', deleteGoal);
  
 ///////////////////////////authentification routes//////////////
